@@ -138,7 +138,7 @@ export default async function HomePage() {
           <div className="border border-zinc-100 rounded-xl p-8 space-y-6">
             <div className="flex items-center gap-4">
               <BriefcaseBusinessIcon className="size-5 text-muted-foreground fill-zinc-50" />
-              <span className="text-sm font-medium">Carreira</span>
+              <span className="text-sm font-medium">Work</span>
             </div>
 
             <div className="flex flex-col gap-4">
@@ -176,7 +176,7 @@ export default async function HomePage() {
             </div>
 
             <Button variant="secondary" className="w-full">
-              Baixar currículo
+              Download CV
               <ArrowDownIcon className="size-4 text-muted-foreground" />
             </Button>
           </div>
