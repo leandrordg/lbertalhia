@@ -1,8 +1,8 @@
 import { gql } from "@apollo/client";
 
-export const GET_POSTS = gql`
-  query GetPosts {
-    posts {
+export const GET_POSTS_BY_SLUG = gql`
+  query GetPosts($slug: String!) {
+    posts(where: { slug: $slug }) {
       id
       title
       slug

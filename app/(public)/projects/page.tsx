@@ -37,7 +37,7 @@ export default async function ProjectsPage() {
             >
               <div className="absolute -inset-8 bg-muted/50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-200 -z-10" />
 
-              <Link href={project.demo ?? project.sourceCode}>
+              <Link target="_blank" href={project.demo ?? project.sourceCode}>
                 <div className="p-1.5 rounded-full border w-fit shadow-xs bg-white">
                   <div className="relative size-8 rounded-full overflow-clip shadow-xs shrink-0">
                     <Image
@@ -51,6 +51,7 @@ export default async function ProjectsPage() {
               </Link>
 
               <Link
+                target="_blank"
                 href={project.demo ?? project.sourceCode}
                 className="font-medium"
               >
@@ -62,6 +63,7 @@ export default async function ProjectsPage() {
               </div>
 
               <Link
+                target="_blank"
                 href={project.sourceCode}
                 className="flex items-center gap-2 text-sm text-muted-foreground"
               >
