@@ -17,15 +17,15 @@ export default async function AboutPage() {
         <div className="flex-[3]">
           <div className="max-w-xl space-y-6">
             <h1 className="text-4xl font-bold tracking-tight leading-snug text-zinc-800 sm:text-5xl dark:text-zinc-100">
-              I'm Leandro Bertalhia. I live in São Paulo, where I create digital
+              I&apos;m Leandro Bertalhia. I live in São Paulo, where I create digital
               solutions for the future.
             </h1>
 
             <p className="leading-relaxed text-muted-foreground">
-              I've always had a passion for creating things, and I wrote my
+              I&apos;ve always had a passion for creating things, and I wrote my
               first program at the age of 16. From there, my fascination with
               technology grew, and I dove deep into web development, mastering
-              tools like Next.js, TypeScript, and AWS. Over the years, I've
+              tools like Next.js, TypeScript, and AWS. Over the years, I&apos;ve
               worked on everything from building complex e-commerce platforms to
               optimizing backend services, and even creating real-time
               collaborative applications.
@@ -43,11 +43,11 @@ export default async function AboutPage() {
             </p>
 
             <p className="leading-relaxed text-muted-foreground">
-              Along the way, I've gained experience working on diverse projects,
+              Along the way, I&apos;ve gained experience working on diverse projects,
               from helping improve operational efficiency at Suzano Papel e
               Celulose to launching my own ventures. Every project I take on is
-              an opportunity to push the boundaries of what's possible with
-              technology, and I'm always looking forward to the next challenge.
+              an opportunity to push the boundaries of what&apos;s possible with
+              technology, and I&apos;m always looking forward to the next challenge.
             </p>
           </div>
         </div>
