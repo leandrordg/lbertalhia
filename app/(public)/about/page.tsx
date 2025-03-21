@@ -1,8 +1,7 @@
 import Image from "next/image";
-
-import { SmilePlusIcon } from "lucide-react";
-import { getSocials } from "@/hooks/get-socials";
 import Link from "next/link";
+
+import { getSocials } from "@/hooks/get-socials";
 
 export default async function AboutPage() {
   const socials = await getSocials();
@@ -17,8 +16,8 @@ export default async function AboutPage() {
         <div className="flex-[3]">
           <div className="max-w-xl space-y-6">
             <h1 className="text-4xl font-bold tracking-tight leading-snug text-zinc-800 sm:text-5xl dark:text-zinc-100">
-              I&apos;m Leandro Bertalhia. I live in São Paulo, where I create digital
-              solutions for the future.
+              I&apos;m Leandro Bertalhia. I live in São Paulo, where I create
+              digital solutions for the future.
             </h1>
 
             <p className="leading-relaxed text-muted-foreground">
@@ -43,11 +42,12 @@ export default async function AboutPage() {
             </p>
 
             <p className="leading-relaxed text-muted-foreground">
-              Along the way, I&apos;ve gained experience working on diverse projects,
-              from helping improve operational efficiency at Suzano Papel e
-              Celulose to launching my own ventures. Every project I take on is
-              an opportunity to push the boundaries of what&apos;s possible with
-              technology, and I&apos;m always looking forward to the next challenge.
+              Along the way, I&apos;ve gained experience working on diverse
+              projects, from helping improve operational efficiency at Suzano
+              Papel e Celulose to launching my own ventures. Every project I
+              take on is an opportunity to push the boundaries of what&apos;s
+              possible with technology, and I&apos;m always looking forward to
+              the next challenge.
             </p>
           </div>
         </div>

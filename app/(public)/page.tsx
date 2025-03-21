@@ -38,9 +38,9 @@ export default async function HomePage() {
 
         <div className="max-w-2xl">
           <p className="leading-relaxed text-zinc-600 dark:text-zinc-400">
-            Hello, I&apos;m Leandro! Web developer and entrepreneur, I am the founder
-            and developer of Bertalhia Shopping, where I sell products and
-            create custom projects for individuals and businesses.
+            Hello, I&apos;m Leandro! Web developer and entrepreneur, I am the
+            founder and developer of Bertalhia Shopping, where I sell products
+            and create custom projects for individuals and businesses.
           </p>
         </div>
 
