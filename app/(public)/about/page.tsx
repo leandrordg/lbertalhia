@@ -3,6 +3,8 @@ import Link from "next/link";
 
 import { getSocials } from "@/hooks/get-socials";
 
+export const revalidate = 3600;
+
 export default async function AboutPage() {
   const socials = await getSocials();
 

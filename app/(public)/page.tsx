@@ -17,6 +17,8 @@ import {
   SearchIcon,
 } from "lucide-react";
 
+export const revalidate = 3600;
+
 export default async function HomePage() {
   const projects = await getProjects();
   const posts = await getPosts();
@@ -88,7 +90,7 @@ export default async function HomePage() {
               <article className="relative flex flex-col gap-4 rounded-xl group">
                 <div className="absolute -inset-8 bg-muted/50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-200 -z-10" />
                 <div className="flex items-center gap-2">
-                  <div className="w-[2px] h-5 bg-zinc-200 rounded-xl" />
+                  <div className="w-px h-5 bg-zinc-200 rounded-xl" />
                   <div className="text-sm text-muted-foreground">
                     {formatDate(post.createdAt, {
                       month: "long",
@@ -139,16 +141,17 @@ export default async function HomePage() {
                   key={career.id}
                   className="flex items-start md:items-center gap-4"
                 >
-                  <div className="p-1.5 rounded-full border">
-                    <div className="relative size-8 rounded-full overflow-clip shadow-sm shrink-0">
+                  <div className="p-1.5 rounded-full border w-fit shadow-xs bg-white">
+                    <div className="relative size-8 rounded-full overflow-clip shadow-xs shrink-0">
                       <Image
                         src={career.image.url}
-                        alt={career.company}
-                        className="object-cover shadow-sm"
+                        alt={career.name}
+                        className="object-contain bg-muted"
                         fill
                       />
                     </div>
                   </div>
+
                   <div className="w-full space-y-1">
                     <div className="text-sm font-medium">{career.company}</div>
                     <div className="flex flex-wrap gap-2 justify-between text-xs text-muted-foreground">
