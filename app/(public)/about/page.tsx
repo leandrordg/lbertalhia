@@ -58,11 +58,31 @@ export default async function AboutPage() {
               possible with technology, and I&apos;m always looking forward to
               the next challenge.
             </p>
+
+            <div className="md:hidden flex flex-wrap gap-0.5">
+              {socials.map((social) => (
+                <Link key={social.id} target="_blank" href={social.url}>
+                  <div className="flex items-center gap-4 group px-2 lg:px-4 py-2 rounded-xl hover:bg-muted/50">
+                    <div className="relative size-4 shrink-0">
+                      <Image
+                        src={social.image.url}
+                        alt={social.name}
+                        className="object-cover"
+                        fill
+                      />
+                    </div>
+                    <span className="text-sm text-muted-foreground">
+                      {social.name}
+                    </span>
+                  </div>
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
 
-        <aside className="w-full flex-1 md:flex-[2] space-y-16">
-          <div className="relative place-self-center mx-auto aspect-square w-full rounded-xl overflow-clip shadow-sm rotate-4 max-w-80 lg:max-w-96">
+        <aside className="w-full flex-1 md:flex-[2] space-y-8 lg:space-y-16">
+          <div className="relative aspect-square w-full rounded-xl overflow-clip shadow-sm rotate-4 max-w-80 lg:max-w-96 mx-auto md:mx-0">
             <Image
               src="/profile-square.png"
               alt="Leandro Bertalhia"
@@ -72,7 +92,7 @@ export default async function AboutPage() {
             />
           </div>
 
-          <div className="flex flex-wrap lg:flex-col gap-0.5">
+          <div className="hidden md:flex flex-wrap lg:flex-col gap-0.5">
             {socials.map((social) => (
               <Link key={social.id} target="_blank" href={social.url}>
                 <div className="flex items-center gap-4 group px-2 lg:px-4 py-2 rounded-xl hover:bg-muted/50">

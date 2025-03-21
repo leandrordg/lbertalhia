@@ -7,8 +7,8 @@ import { MoonIcon } from "lucide-react";
 
 export async function Header() {
   return (
-    <header className="max-w-7xl mx-auto px-4 sm:px-8 md:px-16 py-12 relative">
-      <section className="flex items-center">
+    <header className="max-w-7xl mx-auto px-4 sm:px-8 md:px-16 relative py-8 md:py-12 lg:py-16">
+      <section className="flex items-center h-full">
         <div className="flex-1 flex items-center">
           <Link href="/">
             <div className="relative size-10 rounded-full overflow-clip shadow-sm group">
