@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Metadata } from "next";
 
 import { getPostBySlug } from "@/hooks/get-post-by-slug";
 import { components } from "@/lib/components";
@@ -7,11 +8,16 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 
 import { BackButton } from "@/components/back-button";
 
+export const revalidate = 3600;
+
+export const metadata: Metadata = {
+  title: "Reading an article - Leandro Bertalhia",
+  description: "See the latest articles from Leandro Bertalhia.",
+};
+
 interface Props {
   params: Promise<{ articleSlug: string }>;
 }
-
-export const revalidate = 3600;
 
 export default async function ArticlePage({ params }: Props) {
   const { articleSlug } = await params;

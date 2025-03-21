@@ -1,9 +1,16 @@
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
 import { getSocials } from "@/hooks/get-socials";
 
 export const revalidate = 3600;
+
+export const metadata: Metadata = {
+  title: "About - Leandro Bertalhia",
+  description:
+    "I'm Leandro Bertalhia. I live in São Paulo, where I create digital solutions for the future.",
+};
 
 export default async function AboutPage() {
   const socials = await getSocials();
@@ -55,7 +62,7 @@ export default async function AboutPage() {
         </div>
 
         <aside className="w-full flex-1 md:flex-[2] space-y-16">
-          <div className="relative place-self-center sm:place-self-auto aspect-square w-full rounded-xl overflow-clip shadow-sm rotate-4 max-w-80 lg:max-w-96">
+          <div className="relative place-self-center mx-auto aspect-square w-full rounded-xl overflow-clip shadow-sm rotate-4 max-w-80 lg:max-w-96">
             <Image
               src="/profile-square.png"
               alt="Leandro Bertalhia"

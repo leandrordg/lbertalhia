@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { MobileMenu } from "@/components/mobile-menu";
 import { Button } from "@/components/ui/button";
 import { MoonIcon } from "lucide-react";
 
@@ -48,8 +49,11 @@ export async function Header() {
           </Link>
         </nav>
 
-        <div className="flex-1 flex justify-end">
-          <Button type="submit" variant="outline">
+        <div className="flex-1 flex items-center gap-4 justify-end">
+          <div className="md:hidden">
+            <MobileMenu />
+          </div>
+          <Button type="submit" variant="outline" disabled>
             <MoonIcon className="text-indigo-700" />
           </Button>
         </div>

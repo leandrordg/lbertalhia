@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -18,6 +19,11 @@ import {
 } from "lucide-react";
 
 export const revalidate = 3600;
+
+export const metadata: Metadata = {
+  title: "Leandro Bertalhia - Web Developer Full Stack",
+  description: "Bem vindo ao meu portfólio pessoal!",
+};
 
 export default async function HomePage() {
   const projects = await getProjects();

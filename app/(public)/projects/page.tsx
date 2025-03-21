@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -5,6 +6,11 @@ import { getProjects } from "@/hooks/get-projects";
 import { GitHub } from "@/lib/icons";
 
 export const revalidate = 3600;
+
+export const metadata: Metadata = {
+  title: "Projects - Leandro Bertalhia",
+  description: "Projects that reflect my journey in the universe of technology.",
+};
 
 export default async function ProjectsPage() {
   const projects = await getProjects();

@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import Link from "next/link";
 
 import { getPosts } from "@/hooks/get-posts";
@@ -6,6 +7,12 @@ import { formatDate } from "@/lib/utils";
 import { ChevronRightIcon } from "lucide-react";
 
 export const revalidate = 3600;
+
+export const metadata: Metadata = {
+  title: "Articles - Leandro Bertalhia",
+  description:
+    "Writing on web development, entrepreneurship, and technology innovation.",
+};
 
 export default async function ArticlesPage() {
   const posts = await getPosts();
