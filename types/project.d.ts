@@ -3,10 +3,14 @@ type Project = {
   name: string;
   slug: string;
   description: string;
-  tags: string[];
   image: Image;
   demo?: string;
-  sourceCode?: string;
+  sourceCode: string;
   createdAt: string;
   updatedAt: string;
+};
+
+type ProjectWithRelations = Project & {
+  technologies: Technology[];
+  career: Career | null;
 };

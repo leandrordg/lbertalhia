@@ -10,11 +10,11 @@ export async function Header() {
       <section className="flex items-center">
         <div className="flex-1 flex items-center">
           <Link href="/">
-            <div className="relative size-10 rounded-full overflow-clip shadow">
+            <div className="relative size-10 rounded-full overflow-clip shadow-sm group">
               <Image
                 src="/profile-square.png"
                 alt="profile"
-                className="object-cover"
+                className="object-cover group-hover:scale-110 transition-transform duration-300"
                 fill
               />
             </div>

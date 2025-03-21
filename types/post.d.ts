@@ -2,10 +2,13 @@ type Post = {
   id: string;
   title: string;
   slug: string;
-  date: string;
+  description: string;
   content: string;
-  tags: string[];
-  coverImage: Image;
+  image: Image;
   createdAt: string;
   updatedAt: string;
+};
+
+type PostWithRelations = Post & {
+  tags: Tag[];
 };

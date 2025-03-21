@@ -1,13 +1,14 @@
 import { gql } from "@apollo/client";
 
-export const GET_POSTS = gql`
-  query GetPosts {
-    posts {
+export const GET_CAREERS = gql`
+  query GetCarrers {
+    careers {
       id
-      title
-      slug
+      name
       description
-      content
+      company
+      employmentType
+      location
       image {
         id
         url
@@ -15,15 +16,10 @@ export const GET_POSTS = gql`
         createdAt
         updatedAt
       }
+      startDate
+      endDate
       createdAt
       updatedAt
-      tags {
-        id
-        name
-        slug
-        createdAt
-        updatedAt
-      }
     }
   }
 `;

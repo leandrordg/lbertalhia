@@ -7,7 +7,6 @@ export const GET_PROJECTS = gql`
       name
       slug
       description
-      tags
       image {
         id
         url
@@ -19,6 +18,38 @@ export const GET_PROJECTS = gql`
       sourceCode
       createdAt
       updatedAt
+      technologies {
+        id
+        name
+        image {
+          id
+          url
+          fileName
+          createdAt
+          updatedAt
+        }
+        createdAt
+        updatedAt
+      }
+      career {
+        id
+        name
+        description
+        company
+        employmentType
+        location
+        image {
+          id
+          url
+          fileName
+          createdAt
+          updatedAt
+        }
+        startDate
+        endDate
+        createdAt
+        updatedAt
+      }
     }
   }
 `;
