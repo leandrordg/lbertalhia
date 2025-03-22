@@ -42,7 +42,7 @@ export default async function ProjectsPage() {
           {projects.map((project) => (
             <article
               key={project.id}
-              className="relative rounded-xl group flex flex-col items-center text-center md:items-start md:text-left gap-4"
+              className="relative rounded-xl group flex flex-col lg:items-center lg:text-center gap-4"
             >
               <div className="absolute -inset-8 bg-muted/50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-200 -z-10" />
 
@@ -67,8 +67,19 @@ export default async function ProjectsPage() {
                 {project.name}
               </Link>
 
-              <div className="text-sm text-muted-foreground font-light line-clamp-2">
+              <div className="text-sm text-muted-foreground font-light line-clamp-5 lg:line-clamp-3">
                 {project.description}
+              </div>
+
+              <div className="flex items-center gap-2">
+                {project.technologies.map((technology) => (
+                  <span
+                    key={technology.id}
+                    className="text-xs bg-muted/50 px-2 py-1 rounded-xl text-muted-foreground pointer-events-none"
+                  >
+                    {technology.name}
+                  </span>
+                ))}
               </div>
 
               <Link

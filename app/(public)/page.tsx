@@ -8,10 +8,11 @@ import { getProjects } from "@/hooks/get-projects";
 import { getSocials } from "@/hooks/get-socials";
 import { formatDate } from "@/lib/utils";
 
+import { DownloadCV } from "@/components/download-cv";
+import { ProjectDialog } from "@/components/project-dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
-  ArrowDownIcon,
   BriefcaseBusinessIcon,
   ChevronRightIcon,
   MailIcon,
@@ -84,17 +85,7 @@ export default async function HomePage() {
 
       <section className="py-12 flex items-center justify-center gap-4 md:gap-8 overflow-hidden">
         {projects.slice(0, 5).map((project) => (
-          <div
-            key={project.id}
-            className="relative aspect-[9/10] w-56 md:w-72 flex-none rounded-xl overflow-hidden shadow-sm even:rotate-2 odd:-rotate-2"
-          >
-            <Image
-              src={project.image.url}
-              alt={project.name}
-              className="object-cover bg-muted"
-              fill
-            />
-          </div>
+          <ProjectDialog key={project.id} project={project} />
         ))}
       </section>
 
@@ -184,10 +175,7 @@ export default async function HomePage() {
               ))}
             </div>
 
-            <Button variant="secondary" className="w-full" disabled>
-              Download CV
-              <ArrowDownIcon className="size-4 text-muted-foreground" />
-            </Button>
+            <DownloadCV />
           </div>
         </aside>
       </section>
