@@ -35,7 +35,9 @@ export default async function ArticlesPage() {
             trends, and more, organized chronologically.
           </p>
         </div>
+      </section>
 
+      <section className="max-w-7xl mx-auto px-4 sm:px-8 md:px-16 py-12">
         <div className="grid grid-cols-1 lg:border-l border-zinc-100 gap-16">
           {posts.map((post) => (
             <article

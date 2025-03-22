@@ -40,14 +40,13 @@ export default async function AboutPage() {
             </p>
 
             <p className="leading-relaxed text-muted-foreground">
-              As a kid, I was also captivated by the idea of building things
-              from the ground up, whether it was coding, tinkering with
-              electronics, or learning to repair machines. My curiosity led me
-              to study Computer Science and develop a strong foundation in both
-              software and hardware. Combining my technical expertise and
-              entrepreneurial mindset, I became the founder of Bertalhia
-              Shopping, where I create tailored digital solutions and offer
-              innovative products to individuals and businesses.
+              Beyond web development, I&apos;ve always been interested in
+              solving technical problems and improving system efficiency. My
+              experience extends beyond software, encompassing electrical
+              maintenance and automation, which has given me a broader
+              understanding of technology. This knowledge has allowed me to
+              create robust and efficient solutions, combining hardware and
+              software to solve real-world challenges.
             </p>
 
             <p className="leading-relaxed text-muted-foreground">

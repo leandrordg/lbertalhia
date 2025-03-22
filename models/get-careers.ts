@@ -1,8 +1,8 @@
 import { gql } from "@apollo/client";
 
 export const GET_CAREERS = gql`
-  query GetCarrers {
-    careers {
+  query GetCarrers($locale: Locale!) {
+    careers(locales: [$locale]) {
       id
       name
       description

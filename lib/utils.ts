@@ -6,5 +6,5 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function formatDate(date: string, options?: Intl.DateTimeFormatOptions) {
-  return new Intl.DateTimeFormat("pt-BR", options).format(new Date(date));
+  return new Intl.DateTimeFormat(navigator.language, options).format(new Date(date));
 }

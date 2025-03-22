@@ -40,8 +40,8 @@ export default async function HomePage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-8 md:px-16 flex items-center">
         <div className="border border-zinc-100 rounded-xl px-4 py-2">
           <p className="text-xs text-center text-muted-foreground">
-            <span className="font-medium">Atualização:</span> foi adiciocionado
-            as páginas indivíduais dos artigos.
+            <span className="font-medium">Update:</span> queries are now
+            localized and the website is available in English and Portuguese. 🌍
           </p>
         </div>
       </section>
@@ -55,9 +55,9 @@ export default async function HomePage() {
 
         <div className="max-w-2xl">
           <p className="leading-relaxed text-zinc-600 dark:text-zinc-400">
-            Hello, I&apos;m Leandro! Web developer and entrepreneur, I am the
-            founder and developer of Bertalhia Shopping, where I sell products
-            and create custom projects for individuals and businesses.
+            Hello, I&apos;m Leandro! A full-stack web developer who loves
+            crafting innovative and efficient digital solutions. Always striving
+            for clean design and seamless functionality.
           </p>
         </div>
 

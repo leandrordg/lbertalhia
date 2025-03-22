@@ -9,7 +9,8 @@ export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: "Projects - Leandro Bertalhia",
-  description: "Projects that reflect my journey in the universe of technology.",
+  description:
+    "Projects that reflect my journey in the universe of technology.",
 };
 
 export default async function ProjectsPage() {
@@ -24,7 +25,7 @@ export default async function ProjectsPage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-8 md:px-16 py-12 space-y-12">
         <div className="max-w-3xl space-y-6">
           <h1 className="text-4xl font-bold tracking-tight leading-snug text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            Projects that reflect my journey in the universe of technology.
+            Projects That Showcase My Journey in Technology.
           </h1>
 
           <p className="leading-relaxed text-muted-foreground">
@@ -34,7 +35,9 @@ export default async function ProjectsPage() {
             your ideas for improvements.
           </p>
         </div>
+      </section>
 
+      <section className="max-w-7xl mx-auto px-4 sm:px-8 md:px-16 py-12 space-y-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
           {projects.map((project) => (
             <article

@@ -1,8 +1,8 @@
 import { gql } from "@apollo/client";
 
 export const GET_POSTS_BY_SLUG = gql`
-  query GetPosts($slug: String!) {
-    posts(where: { slug: $slug }) {
+  query GetPosts($slug: String!, $locale: Locale!) {
+    posts(where: { slug: $slug }, locales: [$locale]) {
       id
       title
       slug
