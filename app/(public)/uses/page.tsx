@@ -29,7 +29,7 @@ export default function UsesPage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-8 md:px-16 py-12 space-y-16">
         <div className="grid grid-cols-1 lg:grid-cols-4 lg:border-l border-zinc-100 dark:border-zinc-800 gap-8">
           <div className="flex items-start gap-4 col-span-1 lg:px-8">
-            <div className="w-px h-5 lg:hidden bg-zinc-100 rounded-xl" />
+            <div className="w-px h-5 lg:hidden bg-zinc-200 dark:bg-zinc-800 rounded-xl" />
             <div className="text-sm text-muted-foreground">Workstation</div>
           </div>
 
@@ -101,7 +101,7 @@ export default function UsesPage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-4 lg:border-l border-zinc-100 dark:border-zinc-800 gap-8">
           <div className="flex items-start gap-4 col-span-1 lg:px-8">
-            <div className="w-px h-5 lg:hidden bg-zinc-100 rounded-xl" />
+            <div className="w-px h-5 lg:hidden bg-zinc-200 dark:bg-zinc-800 rounded-xl" />
             <div className="text-sm text-muted-foreground">
               Development Tools
             </div>
@@ -145,7 +145,7 @@ export default function UsesPage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-4 lg:border-l border-zinc-100 dark:border-zinc-800 gap-8">
           <div className="flex items-start gap-4 col-span-1 lg:px-8">
-            <div className="w-px h-5 lg:hidden bg-zinc-100 rounded-xl" />
+            <div className="w-px h-5 lg:hidden bg-zinc-200 dark:bg-zinc-800 rounded-xl" />
             <div className="text-sm text-muted-foreground">Design</div>
           </div>
 

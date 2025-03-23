@@ -10,6 +10,7 @@ import { formatDate } from "@/lib/utils";
 
 import { DownloadCV } from "@/components/download-cv";
 import { ProjectDialog } from "@/components/project-dialog";
+import { SocialLink } from "@/components/social-link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -41,8 +42,8 @@ export default async function HomePage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-8 md:px-16 flex items-center">
         <div className="border border-zinc-100 dark:border-zinc-800 rounded-xl px-4 py-2">
           <p className="text-xs text-muted-foreground">
-            <span className="font-medium">Update:</span> Queries are now
-            localized and the website is available in English and Portuguese. 🌍
+            <span className="font-medium">Update:</span> Added reading time, new
+            social types, and layout improvements. 🚀
           </p>
         </div>
       </section>
@@ -64,28 +65,26 @@ export default async function HomePage() {
 
         <div className="flex flex-wrap gap-8 mt-8">
           {socials.map((social) => (
-            <Link key={social.id} target="_blank" href={social.url}>
-              <div className="flex items-center gap-2 group">
-                <div className="relative size-4 shrink-0">
-                  <Image
-                    src={social.image.url}
-                    alt={social.name}
-                    className="mix-blend-multiply object-contain dark:grayscale"
-                    fill
-                  />
-                </div>
-                <span className="text-sm font-medium text-muted-foreground group-hover:text-foreground">
-                  {social.name}
-                </span>
-              </div>
-            </Link>
+            <SocialLink key={social.id} social={social} />
           ))}
         </div>
       </section>
 
       <section className="py-12 flex items-center justify-center gap-4 md:gap-8 overflow-hidden">
         {projects.slice(0, 5).map((project) => (
-          <ProjectDialog key={project.id} project={project} />
+          <ProjectDialog key={project.id} project={project}>
+            <div
+              key={project.id}
+              className="relative aspect-[9/10] w-56 md:w-72 flex-none rounded-xl overflow-hidden shadow-sm even:rotate-2 odd:-rotate-2 cursor-pointer select-none"
+            >
+              <Image
+                src={project.image.url}
+                alt={project.name}
+                className="object-cover bg-muted"
+                fill
+              />
+            </div>
+          </ProjectDialog>
         ))}
       </section>
 
@@ -96,7 +95,7 @@ export default async function HomePage() {
               <article className="relative flex flex-col gap-4 rounded-xl group">
                 <div className="absolute -inset-8 bg-muted/50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-200 -z-10" />
                 <div className="flex items-center gap-2">
-                  <div className="w-px h-5 bg-zinc-200 rounded-xl" />
+                  <div className="w-px h-5 bg-zinc-200 dark:bg-zinc-800 rounded-xl" />
                   <div className="text-sm text-muted-foreground">
                     {formatDate(post.createdAt, {
                       month: "long",

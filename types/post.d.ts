@@ -4,6 +4,7 @@ type Post = {
   slug: string;
   description: string;
   content: string;
+  readingTime: number;
   image: Image;
   createdAt: string;
   updatedAt: string;

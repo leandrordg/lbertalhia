@@ -1,7 +1,10 @@
-type Technology = {
-  id: string;
-  name: string;
-  image: Image;
-  createdAt: string;
-  updatedAt: string;
-};
+type TechnologyType =
+  | "nextJs"
+  | "reactJs"
+  | "typescript"
+  | "javascript"
+  | "python"
+  | "java"
+  | "cpp"
+  | "csharp"
+  | "reactNative";

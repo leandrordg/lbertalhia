@@ -7,6 +7,7 @@ import { formatDate } from "@/lib/utils";
 import { MDXRemote } from "next-mdx-remote/rsc";
 
 import { BackButton } from "@/components/back-button";
+import { BookOpenCheckIcon } from "lucide-react";
 
 export const revalidate = 3600;
 
@@ -34,7 +35,7 @@ export default async function ArticlePage({ params }: Props) {
         <div className="flex items-center gap-4 relative">
           <BackButton />
 
-          <div className="w-px h-5 bg-zinc-200 dark:bg-zinc-700 rounded-xl" />
+          <div className="w-px h-5 bg-zinc-200 dark:bg-zinc-800 rounded-xl" />
           <div className="text-sm text-muted-foreground">
             {formatDate(post.createdAt, {
               month: "long",
@@ -43,9 +44,28 @@ export default async function ArticlePage({ params }: Props) {
             })}
           </div>
         </div>
+
         <h1 className="text-4xl font-bold tracking-tight leading-snug text-zinc-800 sm:text-5xl dark:text-zinc-100">
           {post.title}
         </h1>
+
+        <div className="flex flex-wrap gap-2">
+          {post.tags.map((tag) => (
+            <span
+              key={tag.id}
+              className="px-3 py-1.5 text-xs text-muted-foreground font-medium bg-muted/50 rounded-xl"
+            >
+              {tag.name}
+            </span>
+          ))}
+        </div>
+
+        <div className="flex items-center gap-2 text-sm text-muted-foreground">
+          <BookOpenCheckIcon className="size-4" />
+          {navigator.language === "pt-BR"
+            ? `Tempo de leitura aprox: ${post.readingTime} minutos.`
+            : `Reading time approx: ${post.readingTime} minutes.`}
+        </div>
 
         <p className="leading-relaxed text-zinc-600 dark:text-zinc-400">
           {post.description}

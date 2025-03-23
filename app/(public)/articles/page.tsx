@@ -41,10 +41,10 @@ export default async function ArticlesPage() {
           {posts.map((post) => (
             <article
               key={post.id}
-              className="flex flex-col lg:flex-row gap-4 rounded-xl lg:pl-8"
+              className="flex flex-col lg:flex-row gap-4 lg:gap-16 rounded-xl lg:pl-8"
             >
-              <div className="flex items-start gap-4 flex-1">
-                <div className="w-px h-5 lg:hidden bg-zinc-200 rounded-xl" />
+              <div className="flex gap-2">
+                <div className="w-px h-5 lg:hidden bg-zinc-200 dark:bg-zinc-800 rounded-xl" />
                 <div className="text-sm text-muted-foreground">
                   {formatDate(post.createdAt, {
                     month: "long",
@@ -53,21 +53,20 @@ export default async function ArticlesPage() {
                   })}
                 </div>
               </div>
+
               <Link
                 href={`/articles/${post.slug}`}
-                className="flex-[4] relative"
+                className="flex-[4] flex flex-col gap-4 relative group"
               >
-                <div className="space-y-4 group">
-                  <div className="absolute -inset-8 bg-muted/50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-200 -z-10" />
+                <div className="absolute -inset-4 md:-inset-8 bg-muted/50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-200 -z-10" />
 
-                  <div className="font-medium">{post.title}</div>
-                  <div className="text-sm text-muted-foreground">
-                    {post.description}
-                  </div>
-                  <p className="flex items-center gap-1 text-sm font-medium text-indigo-700">
-                    Ver artigo <ChevronRightIcon className="size-4" />
-                  </p>
+                <div className="font-medium">{post.title}</div>
+                <div className="text-sm text-muted-foreground">
+                  {post.description}
                 </div>
+                <p className="flex items-center gap-1 text-sm font-medium text-indigo-700">
+                  Ver artigo <ChevronRightIcon className="size-4" />
+                </p>
               </Link>
             </article>
           ))}

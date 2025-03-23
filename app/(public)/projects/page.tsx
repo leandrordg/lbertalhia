@@ -5,6 +5,10 @@ import Link from "next/link";
 import { getProjects } from "@/hooks/get-projects";
 import { GitHub } from "@/lib/icons";
 
+import { CustomTechnology } from "@/components/custom-technology";
+import { ProjectDialog } from "@/components/project-dialog";
+import { ExternalLinkIcon, LinkIcon } from "lucide-react";
+
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
@@ -38,16 +42,14 @@ export default async function ProjectsPage() {
       </section>
 
       <section className="max-w-7xl mx-auto px-4 sm:px-8 md:px-16 py-12 space-y-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
             <article
               key={project.id}
-              className="relative rounded-xl group flex flex-col lg:items-center lg:text-center gap-4"
+              className="rounded-xl group flex flex-col items-center text-center hover:bg-muted/50 p-4 md:p-8 gap-4 transition-colors"
             >
-              <div className="absolute -inset-8 bg-muted/50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-200 -z-10" />
-
-              <Link target="_blank" href={project.demo ?? project.sourceCode}>
-                <div className="p-1.5 rounded-full border w-fit shadow-xs bg-white dark:bg-zinc-800">
+              <ProjectDialog project={project}>
+                <div className="p-1.5 rounded-full border w-fit shadow-xs bg-white dark:bg-zinc-800 cursor-pointer">
                   <div className="relative size-8 rounded-full overflow-clip shadow-xs shrink-0">
                     <Image
                       src={project.image.url}
@@ -57,39 +59,44 @@ export default async function ProjectsPage() {
                     />
                   </div>
                 </div>
-              </Link>
+              </ProjectDialog>
 
               <Link
                 target="_blank"
                 href={project.demo ?? project.sourceCode}
-                className="font-medium"
+                className="flex items-center gap-1 font-medium"
               >
-                {project.name}
+                {project.name}{" "}
+                <ExternalLinkIcon className="size-4 text-muted-foreground" />
               </Link>
 
-              <div className="text-sm text-muted-foreground font-light line-clamp-5 lg:line-clamp-3">
+              <div className="text-sm text-muted-foreground font-light line-clamp-5 lg:line-clamp-3 cursor-default">
                 {project.description}
               </div>
 
-              <div className="flex items-center gap-2">
-                {project.technologies.map((technology) => (
-                  <span
-                    key={technology.id}
-                    className="text-xs bg-muted/50 px-2 py-1 rounded-xl text-muted-foreground pointer-events-none"
+              <div className="flex flex-wrap justify-center gap-2">
+                {project.demo && (
+                  <Link
+                    target="_blank"
+                    href={project.demo}
+                    className="flex items-center gap-2 text-xs font-medium text-muted-foreground py-1.5 px-4 bg-muted/50 rounded-xl hover:bg-muted"
                   >
-                    {technology.name}
-                  </span>
+                    <LinkIcon className="size-4" />
+                    Live Demo
+                  </Link>
+                )}
+                <Link
+                  target="_blank"
+                  href={project.sourceCode}
+                  className="flex items-center gap-2 text-xs font-medium text-muted-foreground py-1.5 px-4 bg-muted/50 rounded-xl hover:bg-muted"
+                >
+                  <GitHub className="size-4 dark:fill-muted-foreground" />
+                  Source Code
+                </Link>
+                {project.technologies.slice(0, 3).map((technology, i) => (
+                  <CustomTechnology key={i} technology={technology} />
                 ))}
               </div>
-
-              <Link
-                target="_blank"
-                href={project.sourceCode}
-                className="flex items-center gap-2 text-sm text-muted-foreground"
-              >
-                <GitHub className="size-4 fill-muted-foreground" />
-                {project.sourceCode.split("/")[4]}
-              </Link>
             </article>
           ))}
         </div>

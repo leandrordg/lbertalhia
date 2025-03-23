@@ -6,15 +6,9 @@ export const GET_SOCIALS = gql`
       id
       name
       url
+      type
       createdAt
       updatedAt
-      image {
-        id
-        url
-        fileName
-        createdAt
-        updatedAt
-      }
     }
   }
 `;

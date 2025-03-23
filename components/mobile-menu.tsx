@@ -18,8 +18,8 @@ export function MobileMenu() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button type="button" variant="outline">
-          <MenuIcon />
+        <Button variant="theme">
+          <MenuIcon className="size-4" />
         </Button>
       </DialogTrigger>
       <DialogContent className="p-0 gap-0 overflow-clip">

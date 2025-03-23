@@ -2,7 +2,15 @@ type Social = {
   id: string;
   name: string;
   url: string;
+  type: SocialType;
   createdAt: string;
   updatedAt: string;
-  image: Image;
 };
+
+type SocialType =
+  | "x"
+  | "github"
+  | "linkedin"
+  | "instagram"
+  | "facebook"
+  | "youtube";

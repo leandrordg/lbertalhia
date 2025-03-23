@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 
+import { SocialLink } from "@/components/social-link";
 import { getSocials } from "@/hooks/get-socials";
 
 export const revalidate = 3600;
@@ -60,21 +60,7 @@ export default async function AboutPage() {
 
             <div className="md:hidden flex flex-wrap gap-0.5">
               {socials.map((social) => (
-                <Link key={social.id} target="_blank" href={social.url}>
-                  <div className="flex items-center gap-4 group px-2 lg:px-4 py-2 rounded-xl hover:bg-muted/50">
-                    <div className="relative size-4 shrink-0">
-                      <Image
-                        src={social.image.url}
-                        alt={social.name}
-                        className="mix-blend-multiply object-contain dark:grayscale"
-                        fill
-                      />
-                    </div>
-                    <span className="text-sm text-muted-foreground">
-                      {social.name}
-                    </span>
-                  </div>
-                </Link>
+                <SocialLink key={social.id} social={social} type="rounded" />
               ))}
             </div>
           </div>
@@ -93,21 +79,7 @@ export default async function AboutPage() {
 
           <div className="hidden md:flex flex-wrap lg:flex-col gap-0.5">
             {socials.map((social) => (
-              <Link key={social.id} target="_blank" href={social.url}>
-                <div className="flex items-center gap-4 group px-2 lg:px-4 py-2 rounded-xl hover:bg-muted/50">
-                  <div className="relative size-4 shrink-0">
-                    <Image
-                      src={social.image.url}
-                      alt={social.name}
-                      className="mix-blend-multiply object-contain dark:grayscale"
-                      fill
-                    />
-                  </div>
-                  <span className="text-sm text-muted-foreground">
-                    {social.name}
-                  </span>
-                </div>
-              </Link>
+              <SocialLink key={social.id} social={social} type="rounded" />
             ))}
           </div>
         </aside>

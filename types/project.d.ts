@@ -5,12 +5,12 @@ type Project = {
   description: string;
   image: Image;
   demo?: string;
+  technologies: TechnologyType[];
   sourceCode: string;
   createdAt: string;
   updatedAt: string;
 };
 
 type ProjectWithRelations = Project & {
-  technologies: Technology[];
   career: Career | null;
 };

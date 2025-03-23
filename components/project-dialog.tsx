@@ -6,6 +6,7 @@ import Link from "next/link";
 import { GitHub } from "@/lib/icons";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
+import { CustomTechnology } from "@/components/custom-technology";
 import {
   Dialog,
   DialogContent,
@@ -17,25 +18,14 @@ import {
 import { LinkIcon } from "lucide-react";
 
 interface Props {
+  children: React.ReactNode;
   project: ProjectWithRelations;
 }
 
-export function ProjectDialog({ project }: Props) {
+export function ProjectDialog({ children, project }: Props) {
   return (
     <Dialog>
-      <DialogTrigger asChild>
-        <div
-          key={project.id}
-          className="relative aspect-[9/10] w-56 md:w-72 flex-none rounded-xl overflow-hidden shadow-sm even:rotate-2 odd:-rotate-2 cursor-pointer select-none"
-        >
-          <Image
-            src={project.image.url}
-            alt={project.name}
-            className="object-cover bg-muted"
-            fill
-          />
-        </div>
-      </DialogTrigger>
+      <DialogTrigger asChild>{children}</DialogTrigger>
       <DialogContent className="p-0 gap-0 overflow-clip focus:outline-none !max-w-2xl">
         <VisuallyHidden>
           <DialogHeader>
@@ -61,27 +51,7 @@ export function ProjectDialog({ project }: Props) {
             {project.name}
           </h2>
 
-          <p className="text-sm lg:text-base text-muted-foreground">
-            {project.description}
-          </p>
-
-          <div className="flex flex-wrap gap-4 py-4">
-            {project.technologies.map((technology) => (
-              <div key={technology.id} className="flex items-center gap-2">
-                <div className="relative size-5 shrink-0 rounded-full overflow-clip">
-                  <Image
-                    src={technology.image.url}
-                    alt={technology.name}
-                    className="object-contain bg-white"
-                    fill
-                  />
-                </div>
-                <span className="text-xs font-medium text-muted-foreground">
-                  {technology.name}
-                </span>
-              </div>
-            ))}
-          </div>
+          <p className="text-sm text-muted-foreground">{project.description}</p>
 
           <div className="flex flex-wrap gap-4">
             {project.demo && (
@@ -99,9 +69,12 @@ export function ProjectDialog({ project }: Props) {
               href={project.sourceCode}
               className="flex items-center gap-2 text-xs font-medium text-muted-foreground py-1.5 px-4 bg-muted/50 rounded-xl hover:bg-muted"
             >
-              <GitHub className="size-4" />
+              <GitHub className="size-4 dark:fill-muted-foreground" />
               Source Code
             </Link>
+            {project.technologies.map((technology, i) => (
+              <CustomTechnology key={i} technology={technology} />
+            ))}
           </div>
         </div>
       </DialogContent>

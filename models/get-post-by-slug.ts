@@ -8,6 +8,7 @@ export const GET_POSTS_BY_SLUG = gql`
       slug
       description
       content
+      readingTime
       image {
         id
         url

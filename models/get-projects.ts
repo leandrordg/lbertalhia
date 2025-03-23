@@ -18,19 +18,7 @@ export const GET_PROJECTS = gql`
       sourceCode
       createdAt
       updatedAt
-      technologies {
-        id
-        name
-        image {
-          id
-          url
-          fileName
-          createdAt
-          updatedAt
-        }
-        createdAt
-        updatedAt
-      }
+      technologies
       career {
         id
         name
