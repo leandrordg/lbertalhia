@@ -1,8 +1,15 @@
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Uses - Leandro Bertalhia",
+  description: "The tools and technologies I use to build my projects.",
+};
+
 export default function UsesPage() {
   return (
     <main>
       <div className="fixed inset-0 -z-10 md:mx-4 lg:mx-8">
-        <div className="h-dvh w-full max-w-7xl mx-auto bg-white border-x border-zinc-100" />
+        <div className="h-dvh w-full max-w-7xl mx-auto bg-white dark:bg-zinc-900 border-x border-zinc-100 dark:border-zinc-800" />
       </div>
 
       <section className="max-w-7xl mx-auto px-4 sm:px-8 md:px-16 py-12 space-y-12">
@@ -20,7 +27,7 @@ export default function UsesPage() {
       </section>
 
       <section className="max-w-7xl mx-auto px-4 sm:px-8 md:px-16 py-12 space-y-16">
-        <div className="grid grid-cols-1 lg:grid-cols-4 lg:border-l border-zinc-100 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-4 lg:border-l border-zinc-100 dark:border-zinc-800 gap-8">
           <div className="flex items-start gap-4 col-span-1 lg:px-8">
             <div className="w-px h-5 lg:hidden bg-zinc-100 rounded-xl" />
             <div className="text-sm text-muted-foreground">Workstation</div>
@@ -92,7 +99,7 @@ export default function UsesPage() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-4 lg:border-l border-zinc-100 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-4 lg:border-l border-zinc-100 dark:border-zinc-800 gap-8">
           <div className="flex items-start gap-4 col-span-1 lg:px-8">
             <div className="w-px h-5 lg:hidden bg-zinc-100 rounded-xl" />
             <div className="text-sm text-muted-foreground">
@@ -136,7 +143,7 @@ export default function UsesPage() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-4 lg:border-l border-zinc-100 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-4 lg:border-l border-zinc-100 dark:border-zinc-800 gap-8">
           <div className="flex items-start gap-4 col-span-1 lg:px-8">
             <div className="w-px h-5 lg:hidden bg-zinc-100 rounded-xl" />
             <div className="text-sm text-muted-foreground">Design</div>

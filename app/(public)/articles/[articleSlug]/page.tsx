@@ -1,5 +1,5 @@
-import Image from "next/image";
 import { Metadata } from "next";
+import Image from "next/image";
 
 import { getPostBySlug } from "@/hooks/get-post-by-slug";
 import { components } from "@/lib/components";
@@ -27,14 +27,14 @@ export default async function ArticlePage({ params }: Props) {
   return (
     <main>
       <div className="fixed inset-0 -z-10 md:mx-4 lg:mx-8">
-        <div className="h-dvh w-full max-w-7xl mx-auto bg-white border-x border-zinc-100" />
+        <div className="h-dvh w-full max-w-7xl mx-auto bg-white dark:bg-zinc-900 border-x border-zinc-100 dark:border-zinc-800" />
       </div>
 
       <section className="max-w-4xl mx-auto px-4 sm:px-8 md:px-16 py-12 space-y-12">
         <div className="flex items-center gap-4 relative">
           <BackButton />
 
-          <div className="w-px h-5 bg-zinc-200 rounded-xl" />
+          <div className="w-px h-5 bg-zinc-200 dark:bg-zinc-700 rounded-xl" />
           <div className="text-sm text-muted-foreground">
             {formatDate(post.createdAt, {
               month: "long",

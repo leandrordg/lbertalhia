@@ -18,7 +18,7 @@ export default async function AboutPage() {
   return (
     <main>
       <div className="fixed inset-0 -z-10 md:mx-4 lg:mx-8">
-        <div className="h-dvh w-full max-w-7xl mx-auto bg-white border-x border-zinc-100" />
+        <div className="h-dvh w-full max-w-7xl mx-auto bg-white dark:bg-zinc-900 border-x border-zinc-100 dark:border-zinc-800" />
       </div>
 
       <section className="flex flex-col-reverse lg:flex-row items-start gap-8 max-w-7xl mx-auto px-4 sm:px-8 md:px-16 py-12 space-y-4">
@@ -66,7 +66,7 @@ export default async function AboutPage() {
                       <Image
                         src={social.image.url}
                         alt={social.name}
-                        className="object-cover"
+                        className="mix-blend-multiply object-contain dark:grayscale"
                         fill
                       />
                     </div>
@@ -99,7 +99,7 @@ export default async function AboutPage() {
                     <Image
                       src={social.image.url}
                       alt={social.name}
-                      className="object-cover"
+                      className="mix-blend-multiply object-contain dark:grayscale"
                       fill
                     />
                   </div>

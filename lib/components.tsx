@@ -12,7 +12,10 @@ const components = {
     <h4 className="text-xl font-medium my-2" {...props} />
   ),
   p: (props: React.ComponentProps<"p">) => (
-    <p className="text-base text-zinc-800 my-2 leading-relaxed" {...props} />
+    <p
+      className="text-base text-zinc-800 dark:text-zinc-300 my-2 leading-relaxed"
+      {...props}
+    />
   ),
   ul: (props: React.ComponentProps<"ul">) => (
     <ul className="list-disc pl-5 py-2" {...props} />
@@ -37,7 +40,10 @@ const components = {
     <a className="text-blue-600 hover:text-blue-800" {...props} />
   ),
   code: (props: React.ComponentProps<"code">) => (
-    <code className="bg-zinc-100 px-2 py-1 rounded-xl text-sm" {...props} />
+    <code
+      className="bg-zinc-100 dark:bg-zinc-800 px-2 py-1 rounded-xl text-sm"
+      {...props}
+    />
   ),
   pre: (props: React.ComponentProps<"pre">) => (
     <pre
@@ -52,7 +58,7 @@ const components = {
     <table className="table-auto w-full mb-4" {...props} />
   ),
   thead: (props: React.ComponentProps<"thead">) => (
-    <thead className="bg-zinc-200" {...props} />
+    <thead className="bg-zinc-200 dark:bg-zinc-800" {...props} />
   ),
   th: (props: React.ComponentProps<"th">) => (
     <th className="border px-4 py-2 text-left" {...props} />

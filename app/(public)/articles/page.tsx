@@ -20,7 +20,7 @@ export default async function ArticlesPage() {
   return (
     <main>
       <div className="fixed inset-0 -z-10 md:mx-4 lg:mx-8">
-        <div className="h-dvh w-full max-w-7xl mx-auto bg-white border-x border-zinc-100" />
+        <div className="h-dvh w-full max-w-7xl mx-auto bg-white dark:bg-zinc-900 border-x border-zinc-100 dark:border-zinc-800" />
       </div>
 
       <section className="max-w-7xl mx-auto px-4 sm:px-8 md:px-16 py-12 space-y-12">
@@ -37,7 +37,7 @@ export default async function ArticlesPage() {
       </section>
 
       <section className="max-w-7xl mx-auto px-4 sm:px-8 md:px-16 py-12">
-        <div className="grid grid-cols-1 lg:border-l border-zinc-100 gap-16">
+        <div className="grid grid-cols-1 lg:border-l border-zinc-100 dark:border-zinc-800 gap-16">
           {posts.map((post) => (
             <article
               key={post.id}

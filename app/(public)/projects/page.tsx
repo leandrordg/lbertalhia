@@ -19,7 +19,7 @@ export default async function ProjectsPage() {
   return (
     <main>
       <div className="fixed inset-0 -z-10 md:mx-4 lg:mx-8">
-        <div className="h-dvh w-full max-w-7xl mx-auto bg-white border-x border-zinc-100" />
+        <div className="h-dvh w-full max-w-7xl mx-auto bg-white dark:bg-zinc-900 border-x border-zinc-100 dark:border-zinc-800" />
       </div>
 
       <section className="max-w-7xl mx-auto px-4 sm:px-8 md:px-16 py-12 space-y-12">
@@ -47,7 +47,7 @@ export default async function ProjectsPage() {
               <div className="absolute -inset-8 bg-muted/50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-200 -z-10" />
 
               <Link target="_blank" href={project.demo ?? project.sourceCode}>
-                <div className="p-1.5 rounded-full border w-fit shadow-xs bg-white">
+                <div className="p-1.5 rounded-full border w-fit shadow-xs bg-white dark:bg-zinc-800">
                   <div className="relative size-8 rounded-full overflow-clip shadow-xs shrink-0">
                     <Image
                       src={project.image.url}

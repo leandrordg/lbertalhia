@@ -2,8 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { MobileMenu } from "@/components/mobile-menu";
-import { Button } from "@/components/ui/button";
-import { MoonIcon } from "lucide-react";
+import { ThemeToggle } from "@/components/theme-toggle";
+import { HeaderLink } from "./header-link";
 
 export async function Header() {
   return (
@@ -22,40 +22,18 @@ export async function Header() {
           </Link>
         </div>
 
-        <nav className="hidden md:flex items-center justify-center border border-zinc-100 rounded-xl overflow-clip shadow-xs">
-          <Link
-            href="/about"
-            className="text-sm text-muted-foreground hover:text-indigo-700 transition-colors px-4 py-2"
-          >
-            About
-          </Link>
-          <Link
-            href="/projects"
-            className="text-sm text-muted-foreground hover:text-indigo-700 transition-colors px-4 py-2"
-          >
-            Projects
-          </Link>
-          <Link
-            href="/articles"
-            className="text-sm text-muted-foreground hover:text-indigo-700 transition-colors px-4 py-2"
-          >
-            Articles
-          </Link>
-          <Link
-            href="/uses"
-            className="text-sm text-muted-foreground hover:text-indigo-700 transition-colors px-4 py-2"
-          >
-            Uses
-          </Link>
+        <nav className="hidden md:flex items-center justify-center bg-white dark:bg-zinc-800 border border-zinc-100 dark:border-zinc-800 rounded-xl overflow-clip">
+          <HeaderLink name="About" href="/about" />
+          <HeaderLink name="Projects" href="/projects" />
+          <HeaderLink name="Articles" href="/articles" />
+          <HeaderLink name="Uses" href="/uses" />
         </nav>
 
         <div className="flex-1 flex items-center gap-4 justify-end">
           <div className="md:hidden">
             <MobileMenu />
           </div>
-          <Button type="submit" variant="outline" disabled>
-            <MoonIcon className="text-indigo-700" />
-          </Button>
+          <ThemeToggle />
         </div>
       </section>
     </header>

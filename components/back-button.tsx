@@ -12,7 +12,7 @@ export function BackButton() {
 
   return (
     <button
-      className="rounded-full border border-zinc-100 p-2 overflow-clip cursor-pointer text-muted-foreground hover:text-foreground hover:bg-muted/50"
+      className="rounded-full border border-zinc-100 dark:border-zinc-800 p-2 overflow-clip cursor-pointer text-muted-foreground hover:text-foreground hover:bg-muted/50"
       onClick={handleClick}
     >
       <ArrowLeftIcon className="size-4" />

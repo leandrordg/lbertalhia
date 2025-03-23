@@ -46,7 +46,7 @@ export function ProjectDialog({ project }: Props) {
 
         <div
           key={project.id}
-          className="relative w-full aspect-video border-b border-zinc-100"
+          className="relative w-full aspect-video border-b border-zinc-100 dark:border-zinc-800"
         >
           <Image
             src={project.image.url}
@@ -65,14 +65,14 @@ export function ProjectDialog({ project }: Props) {
             {project.description}
           </p>
 
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-4 py-4">
             {project.technologies.map((technology) => (
               <div key={technology.id} className="flex items-center gap-2">
-                <div className="relative size-4 shrink-0">
+                <div className="relative size-5 shrink-0 rounded-full overflow-clip">
                   <Image
                     src={technology.image.url}
                     alt={technology.name}
-                    className="object-cover"
+                    className="object-contain bg-white"
                     fill
                   />
                 </div>
