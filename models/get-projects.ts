@@ -2,7 +2,7 @@ import { gql } from "@apollo/client";
 
 export const GET_PROJECTS = gql`
   query GetProjects($locale: Locale!) {
-    projects(locales: [$locale]) {
+    projects(locales: [$locale], orderBy: createdAt_DESC) {
       id
       name
       slug

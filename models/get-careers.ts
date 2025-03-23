@@ -2,7 +2,7 @@ import { gql } from "@apollo/client";
 
 export const GET_CAREERS = gql`
   query GetCarrers($locale: Locale!) {
-    careers(locales: [$locale]) {
+    careers(locales: [$locale], orderBy: createdAt_DESC) {
       id
       name
       description
