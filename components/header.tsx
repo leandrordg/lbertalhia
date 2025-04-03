@@ -1,13 +1,22 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 
+import { motion } from "framer-motion";
+
+import { HeaderLink } from "@/components/header-link";
 import { MobileMenu } from "@/components/mobile-menu";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { HeaderLink } from "./header-link";
 
-export async function Header() {
+export function Header() {
   return (
-    <header className="max-w-7xl mx-auto px-4 sm:px-8 md:px-16 relative py-8 md:py-12 lg:py-16">
+    <motion.header
+      initial={{ opacity: 0, y: -40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, ease: "easeInOut" }}
+      className="max-w-7xl mx-auto px-4 sm:px-8 md:px-16 relative py-8 md:py-12 lg:py-16 z-10"
+    >
       <section className="flex items-center h-full">
         <div className="flex-1 flex items-center">
           <Link href="/">
@@ -36,6 +45,6 @@ export async function Header() {
           <ThemeToggle />
         </div>
       </section>
-    </header>
+    </motion.header>
   );
 }

@@ -9,7 +9,7 @@ import { getSocials } from "@/hooks/get-socials";
 import { formatDate } from "@/lib/utils";
 
 import { DownloadCV } from "@/components/download-cv";
-import { ProjectDialog } from "@/components/project-dialog";
+import { HomeProjectsSlide } from "@/components/home-projects-slide";
 import { SocialLink } from "@/components/social-link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -70,23 +70,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="py-12 flex items-center justify-center gap-4 md:gap-8 overflow-hidden">
-        {projects.slice(0, 5).map((project) => (
-          <ProjectDialog key={project.id} project={project}>
-            <div
-              key={project.id}
-              className="relative aspect-[9/10] w-56 md:w-72 flex-none rounded-xl overflow-hidden shadow-sm even:rotate-2 odd:-rotate-2 cursor-pointer select-none"
-            >
-              <Image
-                src={project.image.url}
-                alt={project.name}
-                className="object-cover bg-muted"
-                fill
-              />
-            </div>
-          </ProjectDialog>
-        ))}
-      </section>
+      <HomeProjectsSlide projects={projects} />
 
       <section className="max-w-7xl mx-auto px-4 sm:px-8 md:px-16 py-12 flex flex-col lg:flex-row gap-16 relative">
         <div className="flex-[3] flex flex-col gap-16">
